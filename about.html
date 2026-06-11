@@ -1,46 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us Page</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <section class="about">
-        <div class="container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="Team">
-            </div>
+    <!-- About Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
 
-            <div class="about-content">
-                <h1>About Us</h1>
-                <p>
-                    Welcome to our company! We are passionate about delivering
-                    high-quality services and innovative solutions. Our team
-                    works hard to help clients achieve their goals through
-                    creativity, technology, and dedication.
-                </p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
 
-                <p>
-                    Founded in 2024, our mission is to provide excellent
-                    customer experiences and build long-term relationships.
-                </p>
+                <!-- Image -->
+                <div>
+                    <img
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                        alt="Team"
+                        class="rounded-2xl shadow-lg w-full h-[450px] object-cover"
+                    />
+                </div>
 
-                <button id="learnMoreBtn">Learn More</button>
+                <!-- Content -->
+                <div>
+                    <span class="text-blue-600 font-semibold uppercase">
+                        About Us
+                    </span>
 
-                <div id="moreInfo" class="hidden">
-                    <p>
-                        We specialize in web development, UI/UX design,
-                        digital marketing, and software solutions.
-                        Our vision is to empower businesses through technology.
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mt-3">
+                        Building Digital Solutions for the Future
+                    </h1>
+
+                    <p class="text-gray-600 mt-6 leading-relaxed">
+                        We are a passionate team of developers, designers, and
+                        innovators dedicated to creating high-quality digital
+                        products. Our goal is to help businesses grow through
+                        modern technology and creative solutions.
                     </p>
+
+                    <p class="text-gray-600 mt-4 leading-relaxed">
+                        Since our founding, we have successfully delivered
+                        websites, web applications, and digital experiences for
+                        clients across various industries.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold text-blue-600">50+</h2>
+                            <p class="text-gray-500">Projects</p>
+                        </div>
+
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold text-blue-600">25+</h2>
+                            <p class="text-gray-500">Clients</p>
+                        </div>
+
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold text-blue-600">5+</h2>
+                            <p class="text-gray-500">Years</p>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <button
+                        id="learnBtn"
+                        class="mt-8 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+                    >
+                        Learn More
+                    </button>
+
+                    <!-- Hidden Content -->
+                    <div
+                        id="moreContent"
+                        class="hidden mt-6 p-4 bg-white rounded-lg shadow"
+                    >
+                        <p class="text-gray-600">
+                            Our mission is to deliver innovative and scalable
+                            solutions that help businesses achieve success in
+                            the digital world. We believe in teamwork,
+                            transparency, and continuous learning.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        const learnBtn = document.getElementById("learnBtn");
+        const moreContent = document.getElementById("moreContent");
+
+        learnBtn.addEventListener("click", () => {
+            moreContent.classList.toggle("hidden");
+
+            if (moreContent.classList.contains("hidden")) {
+                learnBtn.textContent = "Learn More";
+            } else {
+                learnBtn.textContent = "Show Less";
+            }
+        });
+    </script>
+
 </body>
 </html>
